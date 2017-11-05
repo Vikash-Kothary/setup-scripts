@@ -36,6 +36,7 @@
     - virtualbox-dkms
     - vagrant
     - inotify-tools
+    - ntfs-3g
     become: true
 
   - name: Download packages
