@@ -1,5 +1,5 @@
 ---
-# provision.yml
+# file: provision.yml
 
 - hosts: localhost
   tasks:
@@ -20,7 +20,7 @@
     become: true
 
   - name: Install apt packages
-    apt: pkg={{ item }} state=present update_cache=true
+    apt: pkg={{item}} state=present update_cache=true
     with_items:
     - apt-transport-https
     - terminator
