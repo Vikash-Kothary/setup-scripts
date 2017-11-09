@@ -83,7 +83,7 @@
     with_items:
     - { file: 'vimrc', dest: '/home/vikash/.vimrc' }
     - { file: 'bashrc', dest: '/home/vikash/.bashrc' }
-    - { file: 'bash_aliases', dest: '/home/vikash/.bash_aliases' }
+    - { file: 'bash-aliases', dest: '/home/vikash/.bash_aliases' }
     - { file: 'git-config', dest: '/home/vikash/.gitconfig' }
     - { file: 'terminator-config', dest: '/home/vikash/.config/terminator/config' }
     - { file: 'androidstudio.desktop', dest: '/home/vikash/.local/share/applications/androidstudio.desktop' }
