@@ -23,6 +23,7 @@
     apt: pkg={{item}} state=present update_cache=true
     with_items:
     - apt-transport-https
+    - ca-certificates
     - terminator
     - vim
     - deluge
