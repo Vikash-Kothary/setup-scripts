@@ -91,4 +91,4 @@
   - name: Run scripts
     command: 'sh {{ playbook_dir }}/scripts/{{ item }}.sh'
     with_items:
-    - downloads
+    - docker
