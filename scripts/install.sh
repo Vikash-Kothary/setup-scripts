@@ -1,7 +1,7 @@
 #!/bin/bash
 # install.sh
 
-if ! which ansible; then
+if ! [ -x $(command -v ansible) ]; then
   sudo apt-get install -y software-properties-common
   sudo apt-add-repository -y ppa:ansible/ansible
   sudo apt-get -qq update
