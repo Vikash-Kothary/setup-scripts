@@ -17,6 +17,7 @@
     - 'ppa:deluge-team/ppa'
     - 'ppa:team-xbmc/ppa'
     - 'deb https://download.sublimetext.com/ apt/stable/'
+    - 'ppa:mozillateam/firefox-next'
     become: true
 
   - name: Install apt packages
@@ -41,6 +42,7 @@
     - inotify-tools
     - ntfs-3g
     - unrar
+    - firefox
     become: true
 
   - name: Download packages
