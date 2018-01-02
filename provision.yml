@@ -89,7 +89,3 @@
     - { file: 'terminator-config', dest: '/home/vikash/.config/terminator/config' }
     - { file: 'androidstudio.desktop', dest: '/home/vikash/.local/share/applications/androidstudio.desktop' }
 
-  - name: Run scripts
-    command: 'sh {{ playbook_dir }}/scripts/{{ item }}.sh'
-    with_items:
-    - docker

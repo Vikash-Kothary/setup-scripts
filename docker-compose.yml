@@ -1,0 +1,57 @@
+version: '3'
+
+services:
+  # portainer:
+  #   container_name: portainer
+  #   image: portainer/portainer
+  #   ports:
+  #     - 9000:9000
+  #   volumes:
+  #     - /var/run/docker.sock:/var/run/docker.sock
+  #   restart: always
+
+  # dnsmasq:
+  #   container_name: dns_server
+  #   image: andyshinn/dnsmasq:2.76
+  #   ports:
+  #     - 53:53
+  #   cap_add:
+  #     - NET_ADMIN
+  #   volumes:
+  #     - ./apps/dnsmasq.conf:/etc/dnsmasq.conf
+  
+  plex:
+    # localhost:32400/web
+    container_name: plex
+    image: linuxserver/plex
+    network_mode: host
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+    volumes:
+      - ./apps/plex/config:/config
+      - ./apps/plex/tvshows:/data/tvshows
+      - ./apps/plex/movies:/data/movies
+    restart: always
+
+  plexrequests:
+    container_name: plexrequests
+    image: linuxserver/plexrequests
+    ports:
+      - 3000:3000
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./apps/plex-requests/config:/config
+    restart: always    
+
+  nextcloud:
+    container_name: nextcloud
+    image: nextcloud:apache
+    ports:
+      - 8080:80
+    volumes:
+      - ./apps/nextcloud:/var/www/html
+    restart: always
