@@ -50,7 +50,7 @@
       url: '{{ item.url }}'
       dest: '/tmp/{{ item.name }}'
     with_items:
-    - { name: 'android-studio.zip', url: 'https://dl.google.com/dl/android/studio/ide-zips/2.3.3.0/android-studio-ide-162.4069837-linux.zip' }
+    - { name: 'android-studio.zip', url: 'https://dl.google.com/dl/android/studio/ide-zips/3.0.1.0/android-studio-ide-171.4443003-linux.zip' }
     - { name: 'google-chrome.deb', url: 'https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb' }
     - { name: 'gitkraken.deb', url: 'https://release.gitkraken.com/linux/gitkraken-amd64.deb' }
     - { name: 'anki.deb', url: 'https://apps.ankiweb.net/downloads/current/anki_2.0.47_all.deb' }
