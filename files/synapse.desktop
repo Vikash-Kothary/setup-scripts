@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Synapse
+Comment=Search everything you do.
+Keywords=search;find;launch
+Exec=bash -c 'GTK_IM_MODULE="" synapse'
+Icon=synapse
+Categories=GNOME;Utility;
