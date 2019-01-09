@@ -16,4 +16,4 @@ if ! [ -x $(command -v docker-compose) ]; then
 	newgrp docker
 fi
 ansible-playbook -i "localhost," -c local provision.yml --ask-become-pass
-docker-compose up -d
+#docker-compose up -d

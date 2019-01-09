@@ -1,6 +1,7 @@
 [global_config]
 [keybindings]
   copy = <Primary>c
+  hide_window = F12
   paste = <Primary>v
 [layouts]
   [[default]]
@@ -13,4 +14,4 @@
 [plugins]
 [profiles]
   [[default]]
-    background_image = None
+    cursor_color = "#aaaaaa"

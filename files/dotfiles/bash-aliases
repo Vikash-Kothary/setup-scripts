@@ -1,0 +1,4 @@
+alias rm='echo "Use trash instead"'
+
+# Mac-like commands
+alias open='xdg-open &>/dev/null'

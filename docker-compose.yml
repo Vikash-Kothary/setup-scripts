@@ -1,24 +1,74 @@
-version: '3'
+#Reference: https://www.smarthomebeginner.com/docker-home-media-server-2018-basic
+#Requirement: Set environmental variables: USERDIR, PUID, PGID, MYSQL_ROOT_PASSWORD, and TZ as explained in the reference.
+
+version: '3.6'
 
 services:
-  # portainer:
-  #   container_name: portainer
-  #   image: portainer/portainer
-  #   ports:
-  #     - 9000:9000
-  #   volumes:
-  #     - /var/run/docker.sock:/var/run/docker.sock
-  #   restart: always
 
-  # dnsmasq:
-  #   container_name: dns_server
-  #   image: andyshinn/dnsmasq:2.76
-  #   ports:
-  #     - 53:53
-  #   cap_add:
-  #     - NET_ADMIN
-  #   volumes:
-  #     - ./apps/dnsmasq.conf:/etc/dnsmasq.conf
+  ######### FRONTENDS ##########
+
+  # Portainer - WebUI for Containers
+  # https://github.com/portainer/portainer
+  portainer:
+    image: portainer/portainer
+    hostname: portainer
+    container_name: portainer
+    restart: always
+    command: -H unix:///var/run/docker.sock
+    ports:
+      - "XXXX:9000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ${USERDIR}/docker/portainer/data:/data
+      - ${USERDIR}/docker/shared:/shared
+    environment:
+      - TZ=${TZ}
+
+  # Organizer - Unified HTPC/Home Server Web Interface
+  # https://github.com/causefx/Organizr
+  organizr:
+    container_name: organizr
+    hostname: organizr
+    restart: always
+    image: lsiocommunity/organizr
+    volumes:
+      - ${USERDIR}/docker/organizr:/config
+      - ${USERDIR}/docker/shared:/shared
+    ports:
+      - "XXXX:80"
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+
+  # WebUI for MySQL and MariaDB
+  # https://github.com/phpmyadmin/phpmyadmin
+  phpmyadmin:
+    hostname: phpmyadmin
+    container_name: phpmyadmin
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    links:
+      - mariadb:db
+    ports:
+      - XXXX:80
+    environment:
+      - PMA_HOST=mariadb
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD
+
+  ######### DOCKER RELATED ##########
+
+  # Watchtower - Automatic Update of Containers/Apps
+  # https://github.com/v2tec/watchtower
+  dnsmasq:
+    container_name: dns_server
+    image: andyshinn/dnsmasq:2.76
+    ports:
+      - 53:53
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ./apps/dnsmasq.conf:/etc/dnsmasq.conf
   
   plex:
     # localhost:32400/web
@@ -34,24 +84,54 @@ services:
       - ./apps/plex/movies:/data/movies
     restart: always
 
-  plexrequests:
-    container_name: plexrequests
-    image: linuxserver/plexrequests
+  # Ombi – Accept Requests for your Media Server
+  ombi:
+    container_name: ombi
+    hostname: ombi
+    restart: always
+    image: linuxserver/ombi
+    volumes:
+      - ${USERDIR}/docker/ombi:/config
+      - ${USERDIR}/docker/shared:/shared
     ports:
-      - 3000:3000
+      - "XXXX:3579"
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - ./apps/plex-requests/config:/config
-    restart: always    
+      - TZ=${TZ}
+  ######### UTILITIES ##########
 
+  # MariaDB – Database Server for your Apps
+  mariadb:
+    image: "linuxserver/mariadb"
+    container_name: "mariadb"
+    hostname: mariadb
+    volumes:
+        - ${USERDIR}/docker/mariadb:/config
+    ports:
+      - target: 3306
+        published: 3306
+        protocol: tcp
+        mode: host
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+
+  # NextCloud – Your Own Cloud Storage
   nextcloud:
     container_name: nextcloud
-    image: nextcloud:apache
-    ports:
-      - 8080:80
-    volumes:
-      - ./apps/nextcloud:/var/www/html
+    hostname: nextcloud
     restart: always
+    image: linuxserver/nextcloud
+    volumes:
+      - ${USERDIR}/docker/nextcloud:/config
+      - ${USERDIR}/shared_data:/data
+      - ${USERDIR}/docker/shared:/shared
+    ports:
+      - "XXXX:443"
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
