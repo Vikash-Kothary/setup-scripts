@@ -5,3 +5,11 @@
 :syntax on
 :set ru
 :set nu
+
+syntax on
+
+set number
+set incsearch
+set hlsearch
+
+set laststatus=2
