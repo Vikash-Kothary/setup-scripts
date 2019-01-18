@@ -8,7 +8,7 @@
 - [ ] For Windows
 
 ## Future
-- [ ] Migrate over to Github Project Boards
+- [ ] Migrate ROADMAP over to Github Project Boards (see: [here](https://help.github.com/articles/adding-issues-and-pull-requests-to-a-project-board/))
 
 ### Application
 - [ ] [Spotify](https://www.spotify.com/uk/download/linux/)
