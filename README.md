@@ -58,7 +58,7 @@ Please follow our [CODE_OF_CONDUCT.md]() and read the [Code Style Guidelines]().
 **Vikash Kothary** -- Maintainer -- [@VikashKothary](https://github.com/VikashKothary)
 
 ### Acknowledgements
-<!-- TODO: Sponsors -->
+**Jeff Geerling** -- [Mac Ansible Playbook](https://github.com/geerlingguy/mac-dev-playbook) -- [@geerlingguy](https://github.com/geerlingguy)
 
 ### Built With
 * [Ansible](https://www.ansible.com/) -- Simple IT Automation
