@@ -1,2 +1,4 @@
 ---
 # file: group_vars/pc.yml
+
+program_remote_access: teamviewer
