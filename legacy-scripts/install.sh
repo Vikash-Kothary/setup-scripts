@@ -15,5 +15,5 @@ if ! [ -x $(command -v docker-compose) ]; then
 	sudo service docker restart
 	newgrp docker
 fi
-ansible-playbook -i "localhost," -c local provision.yml --ask-become-pass
+ansible-playbook -i "localhost," -c local setup-scripts/provision.yml --ask-become-pass
 #docker-compose up -d
