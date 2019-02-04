@@ -64,4 +64,4 @@ Please follow our [CODE_OF_CONDUCT.md]() and read the [Code Style Guidelines]().
 * [Ansible](https://www.ansible.com/) -- Simple IT Automation
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is proudly open source software licensed under [MIT](LICENSE) - see the [LICENSE](LICENSE) file for details.
