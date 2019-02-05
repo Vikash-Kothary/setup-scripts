@@ -1,0 +1,8 @@
+homebrew_installed_packages:
+  - bash_completion
+  - wget
+  - ntfs-3g
+
+homebrew_cask_apps:
+  - osxfuse
+  -
