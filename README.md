@@ -38,8 +38,13 @@ Run in terminal:
 bash <(curl -s https://raw.githubusercontent.com/Vikash-Kothary/setup-scripts/master/scripts/VIKASH-LAPTOP.sh)
 ```
 
-### Custom
-<!-- TODO: Deploy to server -->
+### Custom Tags
+
+- OS: ubuntu, macos, windows
+- Device: laptop. desktop, server
+- Configurations: dotfiles
+- Profiles: developer, gamer, security
+- Action: install, uninstall, reinstall
 
 ## Changelog
 All notable changes are documented in [CHANGELOG.md](CHANGELOG.md). For past available versions, see the [tags on this repository](https://github.com/Vikash-Kothary/setup-scripts/tags).
