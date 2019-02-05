@@ -1,5 +1,0 @@
----
-# Symlink all dotfiles
-- name: vikashkothary.dotfiles
-# User files are ordered intelligently to assist backups
-- name: vikashkothary.intelligentfiles
