@@ -7,7 +7,7 @@ requirements:
 	
 build:
 	@echo 'Install required roles'
-	cd $(ROOT) && ansible-galaxy install -r requirements.yml
+	cd $(ROOT) && ansible-galaxy install -r requirements.yml --ignore-errors
 
 install:
 	@echo 'Install applications'
