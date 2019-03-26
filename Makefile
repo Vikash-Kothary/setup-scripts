@@ -6,4 +6,4 @@ require-ansible:
 
 install:
 	@echo 'Install applications'
-	ansible-playbook -i "localhost," -c local provision.yml --ask-become-pass
+	ansible-playbook -i "localhost," -c local main.yml --ask-become-pass
