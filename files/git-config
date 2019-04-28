@@ -1,6 +1,0 @@
-[user]
-	name = Vikash Kothary
-	email = kothary.vikash@gmail.com
-[core]
-	editor = vim
-	excludesfile = /home/vikash/.gitignore_global
