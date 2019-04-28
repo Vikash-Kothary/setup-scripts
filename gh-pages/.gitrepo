@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/vikash-kothary/setup-scripts.git
+	branch = gh-pages
+	commit = d70cfbf7f2354f1baf4c9ed02d4ca8694972c11f
+	parent = 917268684d24af1091937ed453c245e558f0d5cd
+	method = merge
+	cmdver = 0.4.0
