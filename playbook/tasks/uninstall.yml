@@ -1,2 +1,10 @@
 ---
-# file: install.yml
+# file: uninstall.yml
+
+- name: remove installation configuration file
+  file:
+    path: ~/Desktop/setup.txt
+    state: absent
+
+- name: uninstall dotfiles
+  include: "roles/vikashkothary.dotfiles/tasks/uninstall.yml"

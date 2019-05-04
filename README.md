@@ -4,6 +4,9 @@
 
 > Setting up my devices with one line
 
+
+Configure any machine with one line. Can to be used be configured to make the machine specific for your use and enforce best practices, security, backup, etc.
+
 <!-- TODO: Project description w/ screenshots -->
 
 See our [ROADMAP.md](ROADMAP.md) for more information.

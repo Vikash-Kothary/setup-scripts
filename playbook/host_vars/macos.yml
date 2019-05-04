@@ -1,2 +1,10 @@
 ---
-# file: host_vars/mac.yml
+# file: host_vars/macos.yml
+
+homebrew_installed_packages:
+  - bash_completion
+  - wget
+  - ntfs-3g
+
+homebrew_cask_apps:
+  - osxfuse

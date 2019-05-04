@@ -55,6 +55,8 @@
       - ntfs-3g
       - unrar
       - firefox
+      - samba
+      - synaptic
       state: present
       update_cache: false
     become: true

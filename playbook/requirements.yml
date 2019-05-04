@@ -1,4 +1,7 @@
 ---
+# file: requirements.yml
+# Install all requirements (see: https://stackoverflow.com/questions/25230376/how-to-automatically-install-ansible-galaxy-roles)
+
 # Symlink all dotfiles
 - name: vikashkothary.dotfiles
 # User files are ordered intelligently to assist backups
