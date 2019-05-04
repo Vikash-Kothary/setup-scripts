@@ -6,3 +6,5 @@
     path: ~/Desktop/setup.txt
     state: touch
 
+- name: install dotfiles
+  include: "../roles/vikashkothary.dotfiles/tasks/install.yml"

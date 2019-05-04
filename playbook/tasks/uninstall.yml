@@ -5,3 +5,6 @@
   file:
     path: ~/Desktop/setup.txt
     state: absent
+
+- name: uninstall dotfiles
+  include: "roles/vikashkothary.dotfiles/tasks/uninstall.yml"
