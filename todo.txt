@@ -1,2 +1,0 @@
-sudo apt-get install synaptic
-apt-get install samba
