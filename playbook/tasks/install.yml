@@ -1,7 +1,8 @@
 ---
 # file: install.yml
 
-- include_vars: "{{ item }}"
-  with_first_found:
-    - "{{ ansible_os_family }}.yml"
-    - "default.yml"
+- name: create installation configuration file
+  file:
+    path: ~/Desktop/setup.txt
+    state: touch
+

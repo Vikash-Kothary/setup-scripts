@@ -1,21 +1,32 @@
 ---
 # file: main.yml
 
-- hosts: all
+- hosts: 127.0.0.1
   connection: local
 
-  pre_tasks:
-    - include_vars: "{{ item }}"
-      with_fileglob:
-        - "{{ playbook_dir }}/config.yml"
-      tags: ["always"]
-
-  roles:
-    - role: vikashkothary.dotfiles
-      when: configure_dotfiles
-      tags: ["dotfiles"]
+  vars_files:
+  - "roles/vikashkothary.dotfiles/vars/main.yml"
+  - "roles/vikashkothary.dotfiles/defaults/main.yml"
+  - "roles/vikashkothary.programs/vars/main.yml"
+  - "roles/vikashkothary.programs/defaults/main.yml"
 
   tasks:
+    - include: "roles/vikashkothary.dotfiles/tasks/uninstall.yml"
+      tags: ["uninstall"]
+    - include: "roles/vikashkothary.dotfiles/tasks/install.yml"
+      tags: ["install"]
+    - include: "roles/vikashkothary.programs/tasks/uninstall.yml"
+      tags: ["uninstall"]
+    - include: "roles/vikashkothary.programs/tasks/install.yml"
+      tags: ["install"]
+
+  tasks:
+  - include_tasks: tasks/uninstall.yml
+    tags: ["uninstall"]
   - include_tasks: tasks/install.yml
+    tags: ["install"]
 
+  # roles:
+  #   - role: vikashkothary.dotfiles
 
+  tasks:

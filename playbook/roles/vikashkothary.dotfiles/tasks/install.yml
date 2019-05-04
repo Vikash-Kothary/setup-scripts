@@ -1,0 +1,22 @@
+---
+# tasks file for vikashkothary.dotfiles
+
+# - name: log dotfiles install
+#   file:
+#     path: ~/Desktop/dotfile.txt
+#     state: touch
+
+- name: Move files
+  file:
+    src: '{{ playbook_dir }}/roles/vikashkothary.dotfiles/files/{{ item.file }}'
+    dest: '{{ item.dest }}'
+    state: link
+    force: true
+  with_items:
+  - { file: '.vimrc', dest: '~/.vimrc' }
+  - { file: '.tmux.conf', dest: '~/.tmux.conf' }
+  - { file: '.bashrc', dest: '~/.bashrc' }
+  - { file: '.bash_aliases', dest: '~/.bash_aliases' }
+  - { file: '.gitconfig', dest: '~/.gitconfig' }
+  # - { file: 'terminator-config', dest: '~/.config/terminator/config' }
+  # - { file: 'files/androidstudio.desktop', dest: '/home/vikash/.local/share/applications/androidstudio.desktop' }

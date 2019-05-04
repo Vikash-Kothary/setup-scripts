@@ -1,2 +1,7 @@
 ---
-# file: install.yml
+# file: uninstall.yml
+
+- name: remove installation configuration file
+  file:
+    path: ~/Desktop/setup.txt
+    state: absent

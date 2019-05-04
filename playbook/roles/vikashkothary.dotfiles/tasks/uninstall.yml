@@ -1,0 +1,23 @@
+---
+# tasks file for vikashkothary.dotfiles
+
+- name: log dotfiles uninstall
+  file:
+    path: ~/Desktop/dotfile.txt
+    state: absent
+
+
+# - name: Move files
+#   file:
+#     src: '{{ role_path }}/files/{{ item.file }}'
+#     dest: '{{ item.dest }}'
+#     state: absent
+#     force: true
+#   with_items:
+#   - { file: '.vimrc', dest: '~/.vimrc' }
+#   - { file: '.tmux.conf', dest: '~/.tmux.conf' }
+#   - { file: '.bashrc', dest: '~/.bashrc' }
+#   - { file: '.bash_aliases', dest: '~/.bash_aliases' }
+#   - { file: '.gitconfig', dest: '~/.gitconfig' }
+#   - { file: 'terminator-config', dest: '~/.config/terminator/config' }
+  # - { file: 'files/androidstudio.desktop', dest: '/home/vikash/.local/share/applications/androidstudio.desktop' }

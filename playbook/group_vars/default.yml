@@ -1,2 +1,12 @@
 ---
 # file: group_vars/default.yml
+
+gem_packages:
+  - name: bundler
+    state: latest
+
+npm_packages:
+  - name: webpack
+
+pip_packages:
+  - name: mkdocs
