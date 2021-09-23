@@ -37,8 +37,11 @@ See our [ROADMAP.md](ROADMAP.md) for more information.
 
 ### All
 Run in terminal:
+
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/Vikash-Kothary/setup-scripts/master/scripts/VIKASH-LAPTOP.sh)
+git clone https://github.com/Vikash-Kothary/setup-scripts
+cd setup-scripts
+make install
 ```
 
 ### Custom
