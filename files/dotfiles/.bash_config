@@ -1,0 +1,72 @@
+# file: ~/.bash_config
+# description: Global environment variables.
+
+## NVM
+export NVM_DIR=~/.nvm
+# source $(brew --prefix nvm)/nvm.sh
+[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+## Pyenv
+export PATH="${HOME}/.pyenv/bin:${PATH}"
+eval "$(pyenv init --path)"
+eval "$(pyenv virtualenv-init -)"
+
+## Pipenv
+export PIPENV_VENV_IN_PROJECT="enabled"
+
+## Poetry
+export PATH="${HOME}/.poetry/bin:${PATH}"
+export PATH="${HOME}/.local/bin:${PATH}"
+
+## Python
+export PATH="~/Library/Python/3.7/bin:${PATH}"
+export PATH="${HOME}/Library/Python/2.7/bin:${PATH}"
+
+## Conda
+export PATH="/usr/local/anaconda3/bin:${PATH}"
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/vikash/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/vikash/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/vikash/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/vikash/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+## Jenv
+# eval "$(jenv init -)"
+# export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
+# export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
+# export JAVA_14_HOME=$(/usr/libexec/java_home -v14)
+
+## Java
+# export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`"
+
+## Sdkman
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+## Ruby
+export GEM_HOME=$HOME/.gem/ruby/2.3.0
+export PATH="/usr/local/Cellar/ruby/2.4.1_1/bin:${PATH}"
+export PATH="${GEM_HOME}/bin:${PATH}"
+
+# added by travis gem
+[ -f /Users/kothary/.travis/travis.sh ] && source /Users/kothary/.travis/travis.sh
+
+# tabtab source for packages
+# uninstall by removing these lines
+[ -f ~/.config/tabtab/__tabtab.bash ] && source ~/.config/tabtab/__tabtab.bash || true
+
+## Cargo
+[[ -f "~/.cargo/env" ]] && source "$HOME/.cargo/env"
+
+## MacOS
+# export PATH="$(brew --prefix)/opt/make/libexec/gnubin:${PATH}"
