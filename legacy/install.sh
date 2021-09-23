@@ -1,5 +1,6 @@
-#!/bin/bash
-# install.sh
+#!/usr/bin/env bash
+# file: install.sh
+# description: Main entrypoint. Install ansible, docker then run playbook
 
 if ! [ -x $(command -v ansible) ]; then
   sudo apt-get install -y software-properties-common

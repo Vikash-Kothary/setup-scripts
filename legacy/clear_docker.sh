@@ -1,5 +1,5 @@
 #!/bin/bash
-# run.sh
+# clear_docker.sh
 
 docker rmi $(docker images -a -q) -f
 docker stop $(docker ps -a -q)
