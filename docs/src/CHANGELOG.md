@@ -1,5 +1,5 @@
 # Changelog
-(Major / Minor / Patch)
+> (Major / Minor / Patch)
 
 All notable changes to this project will be documented in this file.
 
@@ -34,4 +34,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - vulnerability
 
 [Unreleased]: https://github.com/Vikash-Kothary/setup-scripts/compare/v0.0.0...HEAD
-[v0.0.1]: https://github.com/Vikash-Kothary/setup-scripts/compare/v0.0.0...v0.0.1
+[v0.1.0]: https://github.com/Vikash-Kothary/setup-scripts/compare/v0.0.0...v0.1.0
